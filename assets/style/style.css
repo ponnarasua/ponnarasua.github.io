@@ -9,12 +9,15 @@
 body {
     height: 100;
     width: 100vw;
-    background-color: #f5f5f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    overflow: auto;
 }
 
 
