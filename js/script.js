@@ -99,37 +99,46 @@ function displayProjects(projects) {
 
 fetchProjects();
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+const form = document.getElementById('contactForm');
+const toast = document.getElementById('toast');
+const submitBtn = form.querySelector('button[type="submit"]');
+let toastTimeout = null;
+
+form.addEventListener('submit', async function (e) {
   e.preventDefault();
+  submitBtn.disabled = true;
 
-  // Get form data
-  const form = e.target;
-  const name = form.name.value;
-  const email = form.email.value;
-  const subject = form.subject.value;
-  const message = form.message.value;
-
-  // Prepare payload
-  const payload = {
-    name: name,
-    email: email,
-    subject: subject,
-    message: message
-  };
+  // Get form data as an object
+  const payload = Object.fromEntries(new FormData(form).entries());
 
   try {
     const response = await fetch('https://66f3a95477b5e88970964664.mockapi.io/contact', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    if (response.ok) {
-      alert('Message sent!');
-      form.reset();
-    } else {
-      alert('Failed to send message');
-    }
+
+    showToast(response.ok ? 'Message sent!' : 'Failed to send message');
+    if (response.ok) form.reset();
   } catch (error) {
-    alert('Error: ' + error);
+    showToast('Error: ' + error.message);
+  } finally {
+    submitBtn.disabled = false;
   }
 });
+
+function showToast(message, duration = 3000) {
+  if (!toast) return;
+  toast.textContent = message;
+
+  // Replace class toggle with direct style manipulations for slightly better performance
+  toast.style.display = 'block';
+  toast.style.opacity = 1;
+
+  if (toastTimeout) clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toast.style.opacity = 0;
+    setTimeout(() => (toast.style.display = 'none'), 300);
+    toastTimeout = null;
+  }, duration);
+}
