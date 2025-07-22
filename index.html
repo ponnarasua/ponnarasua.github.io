@@ -372,7 +372,8 @@
               <div class="icon"><i class="fa fa-envelope"></i></div>
               <h4>Email</h4>
               <p>
-                <a onclick="window.location.href='mailto:ponnarasua410@gmail.com?subject=Hello!&body=This%20is%20a%20test%20email.'" class="contact-link">ponnarasua410@gmail.com</a>
+                <a onclick="window.location.href='mailto:ponnarasua410@gmail.com?subject=Hello!&body=This%20is%20a%20test%20email.'"
+                  class="contact-link">ponnarasua410@gmail.com</a>
               </p>
             </div>
 
@@ -396,41 +397,44 @@
           <h3 class="contact-title padd-15">Send Me an Email</h3>
           <h4 class="contact-sub-title padd-15">I'm very Responsive To Messages</h4>
           <!-- ===== Contact Form ===== -->
-          <div class="row">
-            <div class="contact-form padd-15">
-              <div class="row">
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
+          <form id="contactForm">
+            <div class="row">
+              <div class="contact-form padd-15">
+                <div class="row">
+                  <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="name" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
                   </div>
                 </div>
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
+                <div class="row">
+                  <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject">
+                <div class="row">
+                  <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                      <textarea name="message" class="form-control" placeholder="Message"></textarea>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
+                <div class="row">
+                  <div class="form-item col-12 padd-15">
+                    <button type="submit" class="btn">Send Message</button>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <button type="submit" class="btn">Send Message</button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
+
         </div>
       </section>
       <!-- ===== Contact Section End ===== -->

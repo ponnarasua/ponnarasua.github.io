@@ -98,3 +98,38 @@ function displayProjects(projects) {
 }
 
 fetchProjects();
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // Get form data
+  const form = e.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const subject = form.subject.value;
+  const message = form.message.value;
+
+  // Prepare payload
+  const payload = {
+    name: name,
+    email: email,
+    subject: subject,
+    message: message
+  };
+
+  try {
+    const response = await fetch('https://66f3a95477b5e88970964664.mockapi.io/contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (response.ok) {
+      alert('Message sent!');
+      form.reset();
+    } else {
+      alert('Failed to send message');
+    }
+  } catch (error) {
+    alert('Error: ' + error);
+  }
+});
