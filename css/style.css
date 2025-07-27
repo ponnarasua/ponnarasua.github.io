@@ -36,6 +36,7 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    scrollbar-width: none;
     margin: 0;
     padding: 0;
     outline: none;
@@ -280,7 +281,26 @@ ul {
 .aside .nav li a i {
     margin-right: 15px;
 }
+/* header */
+.header {
+  display: flex;
+  margin: 4px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 4px;
+  border-color: var(--skin-color);
+  background-color: var(--skin-color-2);
+}
 
+.site-title {
+  font-weight: 500;
+  color: var(--text-black-900);
+}
+.site-title a {
+  text-decoration: underline;
+}
 /* home */
 .home {
     min-height: 100vh;
