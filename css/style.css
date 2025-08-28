@@ -930,3 +930,9 @@ h3.my-profession {
     }
 
 }
+
+@media (max-width: 400px) {
+    .home .home-img {
+        padding-right: 18px;
+    }
+}
