@@ -913,7 +913,6 @@ h3.my-profession {
 }
 
 @media (max-width: 767px) {
-
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
@@ -928,5 +927,10 @@ h3.my-profession {
     .about .about-content .skills {
         margin-left: 6px;
     }
+}
 
+@media (max-width: 400px) {
+   .home .home-img {
+       padding-right: 20px;
+   }
 }
