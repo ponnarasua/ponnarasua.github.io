@@ -1,21 +1,3 @@
-// Set date of birth here
-const dob = new Date("2004-11-10");
-
-function calculateAgeFromDOB(dob) {
-  const today = new Date();
-  let age = today.getFullYear() - dob.getFullYear();
-  const m = today.getMonth() - dob.getMonth();
-
-  if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-    age--;
-  }
-
-  return age;
-}
-
-const age = calculateAgeFromDOB(dob);
-document.getElementById("result").textContent = `${age} years old.`;
-
 // typing Animation
 var typed = new Typed(".typing", {
   strings: ["Software Engineer", "Full Stack Developer", "Java Programmer", "Web Developer", "Tech Enthusiast", "Web Designer", "UI/UX Designer", "Graphics Designer", "Freelancer"],
