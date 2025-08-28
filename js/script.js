@@ -83,10 +83,10 @@ function displayProjects(projects) {
               <p>${project.description}</p>
               <div class="project-links">
                 <a href="${project.link}" target="_blank" class="btn">
-                  View Project <i class="fas fa-external-link-alt"></i>
+                  Source Code <i class="fas fa-external-link-alt"></i>
                 </a>
                 <a href="${project.web}" target="_blank" class="btn">
-                  View Website <i class="fas fa-external-link-alt"></i>
+                  Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
             </div>
